@@ -7,15 +7,15 @@ This project is an Android-based **Weather Application** developed using Kotlin.
 - 📍 Location-based weather retrieval (via GPS)
 - 🔍 Search weather by city name
 - 🌡️ Displays temperature and weather description (in °C)
-- ⚙️ REST API integration using Retrofit
+- ⚙️ REST API integration using Retrofit with API key authentication
 - 📱 Modern UI using XML and ViewBinding
 - ☁️ Uses OpenWeatherMap API for weather data
 
 ## 🛠️ Technologies Used
 
 - **Kotlin** – Main programming language
-- **Retrofit** – For making HTTP requests to REST APIs
+- **Retrofit** – For making HTTP requests to REST APIs, with API key management
 - **ViewBinding** – Type-safe XML view references
 - **FusedLocationProviderClient** – Location services
-- **OpenWeatherMap API** – Weather data provider
+- **OpenWeatherMap API** – Weather data provider requiring API key
 - **Material Design** – For modern UI components
