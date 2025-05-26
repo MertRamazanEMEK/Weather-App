@@ -22,7 +22,7 @@ android {
         minSdk = 24
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val apiKey = project.findProperty("openWeatherApiKey") as String
         buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"$apiKey\"")
@@ -64,4 +64,5 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.play.services.location)
+    implementation (libs.glide)
 }
