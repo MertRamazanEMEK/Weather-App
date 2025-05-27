@@ -6,8 +6,6 @@ val localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
     localProperties.load(FileInputStream(localPropertiesFile))
 }
-
-val openWeatherApiKey: String = localProperties.getProperty("openWeatherApiKey", "")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
