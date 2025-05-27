@@ -24,7 +24,8 @@ android {
         versionCode = 1
         versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        val apiKey = project.findProperty("openWeatherApiKey") as String
+        val apiKey = localProperties.getProperty("openWeatherApiKey")
+            ?: throw GradleException("openWeatherApiKey is missing in local.properties")
         buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"$apiKey\"")
     }
 

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.weather_app.BuildConfig
 import com.example.weather_app.R
 import com.example.weather_app.api.RetrofitInstance
@@ -112,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val weatherResponse = response.body()
                     weatherResponse?.let {
+
                         updateUI(it)
                     }
                 } else {
@@ -164,5 +166,10 @@ class MainActivity : AppCompatActivity() {
         binding.tvHumidity.text = "${data.main.humidity}%"
         binding.tvWindSpeed.text = "${data.wind.speed} m/s"
         binding.tvPressure.text = "${data.main.pressure} hPa"
+        val iconCode = data.weather[0].icon
+        val iconUrl = "https://openweathermap.org/img/wn/${iconCode}@2x.png"
+        Glide.with(this)
+            .load(iconUrl)
+            .into(binding.ivWeatherIcon)
     }
 }

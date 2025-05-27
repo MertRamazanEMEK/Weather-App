@@ -19,14 +19,16 @@
         android:background="@drawable/edittext_background"
         android:textColor="#FFFFFF"
         android:textColorHint="#BBDEFB"
-        android:inputType="textCapWords" />
+        android:inputType="textCapWords"
+        tools:ignore="Autofill,HardcodedText" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="12dp"
-        android:weightSum="2">
+        android:weightSum="2"
+        tools:ignore="HardcodedText">
 
         <Button
             android:id="@+id/btnGetWeather"
@@ -36,7 +38,8 @@
             android:text="Şehirden Al"
             android:backgroundTint="#1976D2"
             android:textColor="#FFFFFF"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/btnGetLocationWeather"
@@ -46,12 +49,18 @@
             android:text="Konumdan Al"
             android:backgroundTint="#1976D2"
             android:textColor="#FFFFFF"
-            android:layout_marginStart="8dp" />
+            android:layout_marginStart="8dp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="32dp" />
+    <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:contentDescription="Hava Durumu İkonu"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/tvCityName"
@@ -61,7 +70,8 @@
         android:textSize="32sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/tvTemperature"
@@ -72,7 +82,8 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -82,11 +93,13 @@
         android:textSize="20sp"
         android:textColor="#BBDEFB"
         android:layout_gravity="center"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="4dp"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
         android:gravity="center"
@@ -97,13 +110,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_water_drop"
-                app:tint="#BBDEFB" />
+                app:tint="#BBDEFB"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvHumidity"
@@ -111,7 +126,8 @@
                 android:layout_height="wrap_content"
                 android:text="--%"
                 android:textColor="#BBDEFB"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -119,13 +135,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="HardcodedText,UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_wind"
-                app:tint="#BBDEFB" />
+                app:tint="#BBDEFB"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvWindSpeed"
@@ -141,13 +159,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_pressure"
-                app:tint="#BBDEFB" />
+                app:tint="#BBDEFB"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvPressure"
@@ -155,7 +175,8 @@
                 android:layout_height="wrap_content"
                 android:text="-- hPa"
                 android:textColor="#BBDEFB"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </LinearLayout>

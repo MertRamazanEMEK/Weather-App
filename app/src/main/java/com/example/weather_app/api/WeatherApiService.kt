@@ -21,12 +21,5 @@ interface WeatherApiService {
         @Query("units") units: String = "metric",
         @Query("lang") lang: String = "tr"
     ): Call<WeatherResponse>
- @GET("data/2.5/onecall")
-fun getHourlyWeather(
-     @Query("lat") lat: Double,
-     @Query("lon") lon: Double,
-     @Query("exclude") exclude: String = "current,minutely,daily,alerts",
-     @Query("units") units: String = "metric",
-     @Query("appid") appId: String
- ): Call<HourlyWeatherResponse>
+
 }
