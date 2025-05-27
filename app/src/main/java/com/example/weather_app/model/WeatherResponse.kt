@@ -14,6 +14,7 @@ data class Main(
 )
 
 data class Weather(
+    val id: Int,
     val description: String,
     val icon: String
 )

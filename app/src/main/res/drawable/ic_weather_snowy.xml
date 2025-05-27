@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ic_weather_snowy"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#B3E5FC"
+        android:pathData="M12,2l1.09,3.26 3.41,0 -2.76,2 1.09,3.26 -2.76,-2 -2.76,2 1.09,-3.26 -2.76,-2 3.41,0z" />
+</vector>

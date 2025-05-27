@@ -2,6 +2,8 @@ package com.example.weather_app.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -18,6 +20,7 @@ import com.example.weather_app.R
 import com.example.weather_app.api.RetrofitInstance
 import com.example.weather_app.databinding.ActivityMainBinding
 import com.example.weather_app.model.WeatherResponse
+import com.example.weather_app.widget.WeatherWidget
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import retrofit2.Call
@@ -115,6 +118,7 @@ class MainActivity : AppCompatActivity() {
                     weatherResponse?.let {
 
                         updateUI(it)
+                        updateWidget(it)
                     }
                 } else {
                     Toast.makeText(
@@ -171,5 +175,21 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this)
             .load(iconUrl)
             .into(binding.ivWeatherIcon)
+    }
+    private fun updateWidget(weatherResponse: WeatherResponse) {
+        val appWidgetManager = AppWidgetManager.getInstance(this)
+        val thisWidget = ComponentName(this, WeatherWidget::class.java)
+        val appWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget)
+
+        for (appWidgetId in appWidgetIds) {
+            WeatherWidget.updateAppWidget(
+                this,
+                appWidgetManager,
+                appWidgetId,
+                weatherResponse.weather[0].id,
+                weatherResponse.main.temp,
+                weatherResponse.name
+            )
+        }
     }
 }
